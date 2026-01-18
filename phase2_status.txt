@@ -1,0 +1,37 @@
+# Phase 2: Bluetooth Core - Status Report
+
+## Status: COMPLETED ✓
+
+## Date: 2026-01-18
+
+## Components Implemented:
+1. BLEScanner with Bleak for Fast Pair device discovery
+2. Fast Pair advertisement parsing:
+   - Pairing mode detection (3-byte Model ID, bit 7 = 0)
+   - Idle mode detection (Account Key Filter, bits 5-6 set)
+   - Extended format parsing (Model ID extraction from longer advertisements)
+3. VulnerabilityTester for CVE-2025-36911 detection
+   - Non-invasive KBP request testing
+   - GATT error code interpretation
+   - Device status determination (VULNERABLE/PATCHED/ERROR)
+4. Bluetooth Classic adapter stub (platform-specific implementations deferred)
+
+## Test Results:
+- Total tests: 28
+- Passed: 28
+- Failed: 0
+- Coverage: 64%
+
+## Issues Encountered & Fixed:
+1. **Advertisement parsing bit logic**: Initial test used Model IDs with bit 7 set (0xF5), which doesn't match pairing mode spec
+   - Fixed by using test data with bit 7 = 0 (e.g., 0x3AB21C changed to 0x123456)
+
+2. **Check order in advertisement parser**: Account Key Filter check was after extended format check, causing 0x60 to match wrong pattern
+   - Fixed by reordering checks: pairing mode → account key filter → extended format
+
+## Git Commit:
+- Commit hash: 2b6437b
+- Message: "Phase 2: Bluetooth Core - BLE Scanner and Vulnerability Tester"
+
+## Next Phase:
+Phase 3: Security Components - Crypto, Tester, Exploit
