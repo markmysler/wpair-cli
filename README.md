@@ -49,7 +49,7 @@ pip install wpair
 ### From Source
 
 ```bash
-git clone https://github.com/wpair/wpair-cli.git
+git clone https://github.com/markmysler/wpair-cli.git
 cd wpair-cli
 pip install -e ".[dev]"
 ```

@@ -19,7 +19,7 @@ By participating in this project, you agree to maintain a professional and respe
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in [Issues](https://github.com/wpair/wpair-cli/issues)
+1. Check if the bug has already been reported in [Issues](https://github.com/markmysler/wpair-cli/issues)
 2. If not, create a new issue with:
    - Clear, descriptive title
    - Steps to reproduce
@@ -73,7 +73,7 @@ We welcome suggestions for:
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/wpair-cli.git
+git clone https://github.com/markmysler/wpair-cli.git
 cd wpair-cli
 
 # Create virtual environment
